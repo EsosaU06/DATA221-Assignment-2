@@ -24,7 +24,7 @@ for i in range(0, len(fileLines)): #iterate through every line in fileLines and 
         compareList.append(fileLines[i])
 
 print(f"There are {len(comparisonLineAndIndex)} near-duplicate sets.\n") # the amount of elements in the near-duplicate list
-# indicates how many near-duplicates were found
+# indicate how many near-duplicates were found
 
 print("First two sets of near-duplicates:")
 

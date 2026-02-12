@@ -14,6 +14,7 @@ def find_lines_containing(filename, keyword):
         
     except FileNotFoundError:
         print("Error: the file cannot be found.")
+        # error catching, in case the file was written wrong or does not exist
     
     else:
         print(f"{len(lineAndIndex)} lines containing the keyword ({keyword}) were found.\n")

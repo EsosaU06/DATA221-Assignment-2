@@ -3,37 +3,36 @@ file = open("../Provided Files/sample-file.txt", mode="r")
 wordsList=[]
 
 for line in file:
-    lineSplit = line.split()
-    
-    for word in lineSplit:
-        word = word.lower().strip(",.!?")
+    lineSplitList = line.split()
+    for word in lineSplitList:
+        word = word.lower().strip(",.!?") # normalizes the word
+        # bu putting it in lowercase and removing punctuation simultaneously
         
-        if len(word) > 1:
+        if len(word) > 0: # checking if the word is not just whitespace
             wordsList.append(word)
-    
 file.close()
 
-wordFreq = {}
+wordFrequencyDictionary = {}
 
 # make a key-value pair for the word and its frequency
 for word in wordsList:
-    if word not in wordFreq:
-        wordFreq[word] = 1
+    if word not in wordFrequencyDictionary:
+        wordFrequencyDictionary[word] = 1
     else:
-        wordFreq[word] += 1
+        wordFrequencyDictionary[word] += 1
 
-sortedWordFreq = sorted(wordFreq.items(), key=lambda word: word[1], reverse=True)
+sortedwordFrequencyDictionary = sorted(wordFrequencyDictionary.items(), key=lambda word: word[1], reverse=True)
 
 
 # set variables to print the most frequent words,
 # starting from #1 most frequent to #10 most frequent
 i=0
-if len(sortedWordFreq) < 10:
-    maxFreq = len(sortedWordFreq)
+if len(sortedwordFrequencyDictionary) < 10:
+    maxFreq = len(sortedwordFrequencyDictionary)
 else:
     maxFreq = 10
     
 # print either all or the top 10 most frequent words
 while i in range(0, maxFreq):
-    print(sortedWordFreq[i][0],"->",sortedWordFreq[i][1], end="\n")
+    print(sortedwordFrequencyDictionary[i][0],"->",sortedwordFrequencyDictionary[i][1], end="\n")
     i+=1

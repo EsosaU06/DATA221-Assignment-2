@@ -7,7 +7,7 @@ studentDataFrame = pandas.read_csv("../Provided Files/student.csv")
 
 # filter the dataset three times for the 3 conditions we need to filter
 # three at a time so in order to be in the new dataset, you
-# must fit the previous conditions
+# must fit the previous condition(s)
 filterByStudyTime = studentDataFrame[studentDataFrame["studytime"] >= 3] 
 filterbyInternet =  filterByStudyTime[filterByStudyTime["internet"] == 1]
 studentDataFrameFullyFiltered = filterbyInternet[filterbyInternet["absences"] <= 5]

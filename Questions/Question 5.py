@@ -5,10 +5,11 @@ studentDataFrame = pandas.read_csv("../Provided Files/student.csv")
 
 i=1
 
+# create new column from the conditions of a previous column
 studentDataFrame.loc[studentDataFrame["grade"] <= 9, "grade_band"] = "Low"
 studentDataFrame.loc[(studentDataFrame["grade"] >= 10) & (studentDataFrame["grade"] <=14), "grade_band"] = "Medium"
 studentDataFrame.loc[studentDataFrame["grade"] > 14, "grade_band"] = "High"
-# source: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html
+# (source: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html)
 
 # studentDataFrame["band"] = df["studentDataFrame"].map(gradeToBand)
 
